@@ -1,0 +1,78 @@
+class nodo:
+    def _init_(self,datos,hijos=None):
+        self.datos=datos
+        self.hijos=None
+        self.padres=None
+        self.coste=None
+        selfset_hijos(hijos)
+        
+    def set_hijos(self,hijos):
+        self.hijos=hijos
+        if self.hijos != None:
+            for h in self.hijos:
+                h.padre=self
+    
+    def get_hijos(self):
+        return self.hijos
+    
+    def get_padre(self):
+        return self.padre
+    
+    def set_padre(self):
+        return self.padre
+    
+    def set_datos(self,datos):
+        self.datos=datos
+        
+    def get_datos(self):
+        return self.datos
+    
+    def set_coste(self,coste):
+        self.coste=coste
+        
+    def get_coste(self,coste):
+        return self.coste
+    
+    def igual(self,nodo):
+        if self.get_datos() == nodo.get_datos():
+            return true
+        else:
+            return false
+        
+    def en_lista(self,lista_nodos):
+        en_la_lista=false
+        for n in lista_nodos:
+            if self.igual(n):
+                en_la_lista=true
+        return en_la_lista
+    
+    def _str_(self):
+        return str(get_datos())
+    
+    -----------------------------------------------------------
+def buscar_solucion_BFS(estado_inicial,solucion):
+    solucionado=false
+    nodos_visitados=[]
+    nodos_frontera=[]
+    nodoInicial=Nodo(estado_inicial)
+    nodos_frontera.append(nodoInicial)
+    while (not solucionado) and len(nodos_frontera)!=0:
+        nodo=nodos_frontera.pop(0)
+        #extraer nodo y añadirlo a visitados
+        nodos.visitados.append(nodo)
+        if nodo.get_datos() == solucion:
+            #solucion encotrada
+            solucinado=true
+            return nodo
+        else:
+            #expadir nodo hijos
+            datos_nodos=nodo.get_datos()
+            
+            #operador izquierdo
+            hijo=[dato_nodo[1],dato_nodo[0],dato_nodo[2],dato_nodo[3]]
+            hijo_izquierdo=Nodo(hijos)
+            if not hijos_izquierdo.en_lista(nodos_visitados) and not hijo_izquierdo.en_lista(nodo_forntera):
+                
+                
+        
+        
